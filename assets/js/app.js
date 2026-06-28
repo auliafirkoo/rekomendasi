@@ -116,30 +116,25 @@ function renderHasil(results) {
       <div class="product-card-body">
 
       <div class="product-info-row">
-      <strong>Tanaman Target</strong>
-      <span class="val">${p.tanaman_target || '-'}</span>
+          <strong>Tanaman:</strong>&nbsp;
+          <span class="val">${p.tanaman_target || '-'}</span>
       </div>
 
       <div class="product-info-row">
-      <strong>OPT / Penyakit</strong>
-      <span class="val">${p.hama_penyakit || '-'}</span>
+          <strong>Hama/OPT:</strong>&nbsp;
+          <span class="val">${p.hama_penyakit || '-'}</span>
       </div>
 
       <div class="product-info-row">
-      <strong>Fase Aplikasi</strong>
-      <span class="val">${p.fase_aplikasi || '-'}</span>
+          <strong>Fase:</strong>&nbsp;
+          <span class="val">${p.fase_aplikasi || '-'}</span>
       </div>
 
-      ${
-      p.dosis_pemakaian ?
-      `
+      ${p.dosis_pemakaian ? `
       <div class="product-info-row">
-      <strong>Dosis</strong>
-      <span class="val">${p.dosis_pemakaian}</span>
-      </div>
-      `
-      : ''
-      }
+          <strong>Dosis:</strong>&nbsp;
+          <span class="val">${p.dosis_pemakaian}</span>
+      </div>` : ''}
 
       ${
       p.deskripsi ?

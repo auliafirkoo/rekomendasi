@@ -271,10 +271,12 @@ body {
   font-size:     .81rem;
   color:         var(--gray-600);
   margin-bottom: 7px;
-  align-items:   flex-start;
 }
-.product-info-row .icon { flex-shrink: 0; }
-.product-info-row .val  { color: var(--gray-800); }
+
+.product-info-row .val {
+  color: var(--gray-800);
+  font-weight: 500;
+}
 
 .product-card-footer {
   padding:       12px 16px;
