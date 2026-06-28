@@ -93,6 +93,7 @@ def preprocess(text):
 def load_dataset():
     if not os.path.exists(CSV_PATH):
         raise FileNotFoundError(f"File CSV tidak ditemukan: {CSV_PATH}")
+    
 
     df = pd.read_csv(CSV_PATH, encoding='utf-8-sig')
 
@@ -213,7 +214,11 @@ def rekomendasi(query_text, kategori_filter=None, top_n=5):
         hasil.append(item)
     return hasil
 
-
+try:
+    init_engine()
+    print("[Engine] Engine berhasil diinisialisasi.")
+except Exception as e:
+    print(f"[Engine ERROR] {e}")
 # ============================================================
 # API ROUTES
 # ============================================================
@@ -258,17 +263,18 @@ def recommend():
 
 @app.route('/api/reload', methods=['POST'])
 def reload_engine():
+    import traceback
     try:
         init_engine()
-        return jsonify({"status": "ok", "total_produk": len(_df)})
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
+        print("[Engine] Engine berhasil diinisialisasi.")
+    except Exception:
+        print("========== ENGINE ERROR ==========")
+        traceback.print_exc()
+        print("==================================")
 
 # ============================================================
 # MAIN
 # ============================================================
 
-if __name__ == '__main__':
-    init_engine()
-    app.run(host='0.0.0.0', port=5000, debug=False)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
