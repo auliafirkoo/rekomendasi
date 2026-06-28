@@ -81,18 +81,18 @@ async function initEngine() {
   try {
     const health = await apiFetch('health');
     if (health.engine_ready) {
-      badge.textContent = `✅ Engine OK · ${health.total_produk} produk`;
+      badge.textContent = ` Engine OK · ${health.total_produk} produk`;
       badge.className   = 'badge badge-ok';
       // Load dropdown options
       _options = await apiFetch('options');
       populateSelect(ddJenis, _options.kategori, '— Semua Jenis —');
       updateCascade();
     } else {
-      badge.textContent = '⚠️ Engine belum siap';
+      badge.textContent = ' Engine belum siap';
       badge.className   = 'badge badge-error';
     }
   } catch (err) {
-    badge.textContent = '❌ Python engine tidak berjalan';
+    badge.textContent = ' Python engine tidak berjalan';
     badge.className   = 'badge badge-error';
     showError('Tidak dapat terhubung ke Python engine. Pastikan engine.py sudah dijalankan: <code>python engine.py</code>');
   }
@@ -115,20 +115,20 @@ function renderHasil(results) {
       </div>
       <div class="product-card-body">
         <div class="product-info-row">
-          <span class="icon">🌿</span>
+          <span class="icon"></span>
           <span><strong>Tanaman:</strong>&nbsp;<span class="val">${p.tanaman_target || '-'}</span></span>
         </div>
         <div class="product-info-row">
-          <span class="icon">🐛</span>
+          <span class="icon"></span>
           <span><strong>Hama/OPT:</strong>&nbsp;<span class="val">${p.hama_penyakit || '-'}</span></span>
         </div>
         <div class="product-info-row">
-          <span class="icon">🌱</span>
+          <span class="icon"></span>
           <span><strong>Fase:</strong>&nbsp;<span class="val">${p.fase_aplikasi || '-'}</span></span>
         </div>
         ${p.dosis_pemakaian ? `
         <div class="product-info-row">
-          <span class="icon">💧</span>
+          <span class="icon"></span>
           <span><strong>Dosis:</strong>&nbsp;<span class="val">${p.dosis_pemakaian}</span></span>
         </div>` : ''}
         ${p.deskripsi ? `<div class="product-desc">${p.deskripsi}</div>` : ''}
