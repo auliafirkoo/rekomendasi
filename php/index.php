@@ -29,7 +29,7 @@
 
   <!-- FORM -->
   <section class="card form-card">
-    <h2 class="card-title">🔍 Cari Rekomendasi Pestisida</h2>
+    <h2 class="card-title"> Cari Rekomendasi Pestisida</h2>
     <p class="card-subtitle">Pilih minimal satu atribut — dropdown di bawah otomatis menyesuaikan pilihan yang tersedia.</p>
 
     <div class="form-grid">
@@ -75,8 +75,8 @@
     </div>
 
     <div class="btn-row">
-      <button id="btn-cari" class="btn btn-primary">🔍 Cari Rekomendasi</button>
-      <button id="btn-reset" class="btn btn-secondary">🔄 Reset</button>
+      <button id="btn-cari" class="btn btn-primary"> Cari Rekomendasi</button>
+      <button id="btn-reset" class="btn btn-secondary"> Reset</button>
     </div>
 
     <!-- Info query -->
@@ -91,14 +91,14 @@
 
   <!-- HASIL -->
   <section id="hasil-section" class="hidden">
-    <h2 class="section-title">📋 Hasil Rekomendasi</h2>
+    <h2 class="section-title"> Hasil Rekomendasi</h2>
     <div id="hasil-count" class="hasil-count"></div>
     <div id="hasil-grid" class="hasil-grid"></div>
   </section>
 
   <!-- EMPTY STATE -->
   <div id="empty-state" class="empty-state hidden">
-    <div class="empty-icon">🌱</div>
+    <div class="empty-icon"></div>
     <p>Tidak ada produk yang cocok dengan pilihan Anda.<br>Coba ubah kombinasi atribut.</p>
   </div>
 
