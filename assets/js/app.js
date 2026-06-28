@@ -81,7 +81,7 @@ async function initEngine() {
   try {
     const health = await apiFetch('health');
     if (health.engine_ready) {
-      badge.textContent = ` Engine OK · ${health.total_produk} produk`;
+      badge.textContent = `${health.total_produk} Produk`;
       badge.className   = 'badge badge-ok';
       // Load dropdown options
       _options = await apiFetch('options');
@@ -135,7 +135,7 @@ function renderHasil(results) {
           <div class="product-stok">Stok: ${p.stok}</div>
         </div>
         <span class="product-score ${score_class(skor)}">
-          Similarity: ${skor.toFixed(4)}
+            Tingkat Kecocokan: ${(skor*100).toFixed(1)}%
         </span>
       </div>
     `;
@@ -146,7 +146,7 @@ function renderHasil(results) {
 // ── SHOW ERROR ────────────────────────────────────────────────
 
 function showError(msg) {
-  errorBox.innerHTML = '⚠️ ' + msg;
+  errorBox.textContent = msg;
   show(errorBox);
   setTimeout(() => hide(errorBox), 8000);
 }
@@ -178,7 +178,7 @@ async function cariRekomendasi() {
 
   // Tampilkan info query
   const qParts = [jenis, tanaman, opt, fase].filter(Boolean);
-  queryInfo.innerHTML = `<strong>Query:</strong> <code>${qParts.join(' · ')}</code>`
+  queryInfo.innerHTML = `<strong>Pencarian:</strong> <code>${qParts.join(' · ')}</code>`
     + (jenis ? ` &nbsp;|&nbsp; <small>Filter kategori: <strong>${jenis}</strong></small>` : '');
   show(queryInfo);
 
