@@ -130,7 +130,7 @@ def load_dataset():
         df.insert(0, 'produk_id', range(1, len(df) + 1))
 
     # Filter stok > 0
-    df = df[df['stok'] > 0].reset_index(drop=True)
+    #df = df[df['stok'] > 0].reset_index(drop=True)
     return df
 
 def gabungkan_teks(row):
