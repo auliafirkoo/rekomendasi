@@ -115,20 +115,16 @@ function renderHasil(results) {
       </div>
       <div class="product-card-body">
         <div class="product-info-row">
-          <span class="icon"></span>
           <span><strong>Tanaman:</strong>&nbsp;<span class="val">${p.tanaman_target || '-'}</span></span>
         </div>
         <div class="product-info-row">
-          <span class="icon"></span>
           <span><strong>Hama/OPT:</strong>&nbsp;<span class="val">${p.hama_penyakit || '-'}</span></span>
         </div>
         <div class="product-info-row">
-          <span class="icon"></span>
           <span><strong>Fase:</strong>&nbsp;<span class="val">${p.fase_aplikasi || '-'}</span></span>
         </div>
         ${p.dosis_pemakaian ? `
         <div class="product-info-row">
-          <span class="icon"></span>
           <span><strong>Dosis:</strong>&nbsp;<span class="val">${p.dosis_pemakaian}</span></span>
         </div>` : ''}
         ${p.deskripsi ? `<div class="product-desc">${p.deskripsi}</div>` : ''}

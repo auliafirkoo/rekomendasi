@@ -320,7 +320,7 @@ body {
   padding:     60px 20px;
   color:       var(--gray-600);
 }
-.empty-icon  { font-size: 3rem; margin-bottom: 12px; }
+
 .empty-state p { font-size: .92rem; line-height: 1.6; }
 
 .error-box {
