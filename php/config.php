@@ -1,18 +1,11 @@
 <?php
 // ============================================================
 // KONFIGURASI APLIKASI
-// Sesuaikan nilai di bawah dengan environment Anda
+// Tidak ada MySQL — data dibaca dari CSV oleh Python engine
 // ============================================================
 
-// ── MySQL ────────────────────────────────────────────────────
-define('DB_HOST',     'localhost');
-define('DB_USER',     'root');
-define('DB_PASS',     '');
-define('DB_NAME',     'rekomendasi_pestisida');
-define('DB_CHARSET',  'utf8mb4');
-
 // ── URL Python Flask API ──────────────────────────────────────
-// Pastikan engine.py sedang berjalan sebelum membuka web
+// Jalankan python/engine.py dulu sebelum membuka web
 define('PYTHON_API_URL', 'http://localhost:5000');
 
 // ── Nama Toko / Aplikasi ──────────────────────────────────────
