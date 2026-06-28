@@ -109,36 +109,131 @@ function renderHasil(results) {
     card.className = 'product-card';
     card.innerHTML = `
       <div class="product-card-header">
-        <div class="product-rank">#${idx + 1}</div>
-        <div class="product-name">${p.nama_produk}</div>
-        <span class="product-badge">${p.kategori}</span>
+          <div class="product-name">${p.nama_produk}</div>
+          <span class="product-badge">${p.kategori}</span>
       </div>
+
       <div class="product-card-body">
-        <div class="product-info-row">
-          <span><strong>Tanaman:</strong>&nbsp;<span class="val">${p.tanaman_target || '-'}</span></span>
-        </div>
-        <div class="product-info-row">
-          <span><strong>Hama/OPT:</strong>&nbsp;<span class="val">${p.hama_penyakit || '-'}</span></span>
-        </div>
-        <div class="product-info-row">
-          <span><strong>Fase:</strong>&nbsp;<span class="val">${p.fase_aplikasi || '-'}</span></span>
-        </div>
-        ${p.dosis_pemakaian ? `
-        <div class="product-info-row">
-          <span><strong>Dosis:</strong>&nbsp;<span class="val">${p.dosis_pemakaian}</span></span>
-        </div>` : ''}
-        ${p.deskripsi ? `<div class="product-desc">${p.deskripsi}</div>` : ''}
+
+      <div class="product-info-row">
+      <strong>Tanaman Target</strong>
+      <span class="val">${p.tanaman_target || '-'}</span>
       </div>
+
+      <div class="product-info-row">
+      <strong>OPT / Penyakit</strong>
+      <span class="val">${p.hama_penyakit || '-'}</span>
+      </div>
+
+      <div class="product-info-row">
+      <strong>Fase Aplikasi</strong>
+      <span class="val">${p.fase_aplikasi || '-'}</span>
+      </div>
+
+      ${
+      p.dosis_pemakaian ?
+      `
+      <div class="product-info-row">
+      <strong>Dosis</strong>
+      <span class="val">${p.dosis_pemakaian}</span>
+      </div>
+      `
+      : ''
+      }
+
+      ${
+      p.deskripsi ?
+      `
+      <div class="product-desc">
+      ${p.deskripsi}
+      </div>
+      `
+      : ''
+      }
+
+      </div>
+
       <div class="product-card-footer">
-        <div>
-          <div class="product-harga">${fmt_rp(p.harga)}</div>
-          <div class="product-stok">Stok: ${p.stok}</div>
-        </div>
-        <span class="product-score ${score_class(skor)}">
-            Tingkat Kecocokan: ${(skor*100).toFixed(1)}%
-        </span>
+
+      <div>
+      <div class="product-harga">
+      ${fmt_rp(p.harga)}
       </div>
-    `;
+
+      <div class="product-stok">
+      Stok : ${p.stok}
+      </div>
+      </div>
+
+      <div class="product-score ${score_class(skor)}">
+      ${(skor*100).toFixed(1)}%
+      </div>
+
+      </div>
+      `;card.innerHTML = `
+      <div class="product-card-header">
+          <div class="product-name">${p.nama_produk}</div>
+          <span class="product-badge">${p.kategori}</span>
+      </div>
+
+      <div class="product-card-body">
+
+      <div class="product-info-row">
+      <strong>Tanaman Target</strong>
+      <span class="val">${p.tanaman_target || '-'}</span>
+      </div>
+
+      <div class="product-info-row">
+      <strong>OPT / Penyakit</strong>
+      <span class="val">${p.hama_penyakit || '-'}</span>
+      </div>
+
+      <div class="product-info-row">
+      <strong>Fase Aplikasi</strong>
+      <span class="val">${p.fase_aplikasi || '-'}</span>
+      </div>
+
+      ${
+      p.dosis_pemakaian ?
+      `
+      <div class="product-info-row">
+      <strong>Dosis</strong>
+      <span class="val">${p.dosis_pemakaian}</span>
+      </div>
+      `
+      : ''
+      }
+
+      ${
+      p.deskripsi ?
+      `
+      <div class="product-desc">
+      ${p.deskripsi}
+      </div>
+      `
+      : ''
+      }
+
+      </div>
+
+      <div class="product-card-footer">
+
+      <div>
+      <div class="product-harga">
+      ${fmt_rp(p.harga)}
+      </div>
+
+      <div class="product-stok">
+      Stok : ${p.stok}
+      </div>
+      </div>
+
+      <div class="product-score ${score_class(skor)}">
+      ${(skor*100).toFixed(1)}%
+      </div>
+
+      </div>
+      `;
     hasilGrid.appendChild(card);
   });
 }
