@@ -6,7 +6,7 @@
 
 // ── URL Python Flask API ──────────────────────────────────────
 // Jalankan python/engine.py dulu sebelum membuka web
-define('PYTHON_API_URL', 'http://localhost:5000');
+define('PYTHON_API_URL', 'https://rekomendasi-1.onrender.com');
 
 // ── Nama Toko / Aplikasi ──────────────────────────────────────
 define('APP_NAME',   'Sistem Rekomendasi Pestisida');
